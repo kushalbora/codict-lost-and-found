@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body { background-color: black; color: ghostwhite; padding: 40px; font-family: Arial, Helvetica, sans-serif; }
+        .container { gap: 40px; display: flex; flex-wrap: wrap; }
+        .box { padding: 20px; background: #212121; border-radius: 10px; flex: 1; min-width: 300px; }
+        .matches-box { padding: 20px; background: #001a00; border-radius: 10px; border: 2px solid #00ff00; flex: 1; min-width: 300px; }
+        input, select, button { margin-top: 10px; padding: 10px; box-sizing: border-box; width: 100%; }
+        button { background-color: #007bff; color: white; font-weight: bold; margin-top: 20px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+    <title>NITK lost and found</title>
+</head>
+<body>
+
+    <h1>🔍 Campus lost-and-found intelligence</h1>
+
+    <div class="container">
+        
+        <!-- Form Section -->
+        <div class="box">
+            <h2>Report an item</h2>
+            <form action="/submit" method="post" enctype="multipart/form-data">
+                <select name="status" required>
+                    <option value="Lost">I lost something</option>
+                    <option value="Found">I found something</option>
+                </select>
+                
+                <input type="date" name="date" required>
+
+                <select name="category" required>
+                    <option value="wallet">Wallet</option>
+                    <option value="bag">Bag</option>
+                    <option value="umbrella">Umbrella</option>
+                    <option value="earbuds">Earbuds</option>
+                    <option value="keys">Keys</option>
+                </select>
+                
+                <select name="color" required>
+                    <option value="black">Black</option>
+                    <option value="blue">Blue</option>
+                    <option value="white">White</option>
+                    <option value="grey">Grey</option>
+                </select>
+
+                <select name="location" required>
+                    <option value="LHC-D">LHC-D</option>
+                    <option value="Library">Library</option>
+                    <option value="Hostel">Hostel</option>
+                    <option value="Sports Complex">Sports Complex</option>
+                </select>
+
+                <input type="text" name="desc" placeholder="Enter description" required>
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Submit to database</button>
+            </form>
+        </div>
+
+        <!-- Matches Section -->
+        <div class="matches-box">
+            <h2 style="color: #00ff00; margin-top: 0;">⚡ AI Match Alerts</h2>
+            
+            <!-- Python will look for this exact string and replace it with matches.txt -->
+            <!-- MATCHES_GO_HERE -->
+            
+        </div>
+
+    </div>
+</body>
+</html>
